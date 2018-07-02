@@ -28,6 +28,8 @@ Differentiate binary and multi-class cases for classification. Differentiate hid
 - Rectifier function = ramp function. It has been used in convolutional networks more effectively than the widely used logistic sigmoid and its more practical counterpart, the hyperbolic tangent. The rectifier is, as of 2015, the most popular activation function for deep neural networks. A unit employing the rectifier is also called a rectified linear unit (ReLU).
 - Best practice: rectifier activation function for the hidden layers (found best in practice), sigmoid for the output layer activation function. Sigmoid allows for probabilistic interpretations.
 
+Available activation functions in Keras: https://keras.io/activations/
+
 ### Weight optimization
 
 Via some kind of (stochastic) gradient descent algorithm. Overview of algorithms (SGD: Momentum, Nesterov accelerated gradient, Adagrad, Adadelta, RMSprop, Adam, AdaMax, Nadam, as well as different algorithms to optimize asynchronous SGD) from 2016: https://arxiv.org/abs/1609.04747
@@ -38,7 +40,6 @@ Via some kind of (stochastic) gradient descent algorithm. Overview of algorithms
 Available optimization algorithms in Keras: https://keras.io/optimizers/
 
 ### Code libraries
-
 - Tensorflow
 - Theano
 - Keras: wrapper, capable of using both Tensorflow or Theano as backend.
