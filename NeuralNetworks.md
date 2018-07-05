@@ -51,12 +51,32 @@ Available loss functions in Keras: https://keras.io/losses/
 
 ## Weight optimization
 
-Via some kind of (stochastic) gradient descent algorithm. Overview of algorithms (SGD: Momentum, Nesterov accelerated gradient, Adagrad, Adadelta, RMSprop, Adam, AdaMax, Nadam, as well as different algorithms to optimize asynchronous SGD) from 2016: https://arxiv.org/abs/1609.04747
+Neural networks trains via a famous technique called Backpropagation, in which we first propagate forward calculating the dot product of inputs signals and their corresponding eeights, and then apply an activation function to those sum of products, which transforms the input signal to an output signal (and also is important to model complex non-linear functions and introduces non-linearities to the model, which enables the model to learn almost any arbitrary functional mappings).
 
-- SGD
-- Adam (https://arxiv.org/abs/1412.6980): Modern algorithm (~2015), uses an adaptive-learning-rate strategy. Recommended by the above paper: "Insofar, Adam might be the best overall choice." (https://arxiv.org/abs/1609.04747)
+After this we propagate backwards in the network carrying error terms and updating weights values using gradient descent, in which we calculate the gradient of Error(E) function with respect to the weights or the parameters, and update the weights or parameters in the opposite direction of the gradient of the loss function.
 
+Overview of algorithms (SGD: Momentum, Nesterov accelerated gradient, Adagrad, Adadelta, RMSprop, Adam, AdaMax, Nadam, as well as different algorithms to optimize asynchronous SGD) from 2016: https://arxiv.org/abs/1609.04747
+
+Broad categories:
+- First order algorithms: they only use the first order derivatives (the Jacobian matrix). They give a line that is tangential to a point on its Error Surface.
+    - Examples would include the gradient descent algoritmhs
+- Second order algoritmhs: they use the second order derivatives (the Hessian matrix). They provide us with a quadratic surface which touches the curvature of the Error Surface.
+    - Such algirithms are costly to compute compared to the first order ones, however they will not get stuck around paths of slow convergence around saddle points whereas gradient descent sometimes gets stuck and does not converges.
+    - Examples would include the interior-point algorithms https://web.stanford.edu/class/msande311/lecture13.pdf
+
+Selected algorithms:
+- Gradient descent: minimize or maximize a loss function E(x) using its gradient values with respect to the parameters. It is a first order optimization algorithm, that is to say that it only uses the first order derivatives (the Jacobian matrix).
+- Stochastic gradient descent: frequent updates to the weights (compared to GD), which results in higher variance in the loss function, which in turn helps to discover 'better' minima. The stochastic nature will result in more complex convergence to the exact minima. 
+- Mini batch gradient descent: updates are only performed after batches of inputs have been processed. In practice, SGD usually refers to this batch algorithm.
+- Momentum GD: improves convergence by making the amout of the update of weigths depend on the update in the last step. Thus, if derivatives consistently point toward the same direction in each step, the update gets larger, if the derivatives change direction, the update slows down. This means it does parameter updates only for relevant examples. This reduces the unnecessary parameter updates which leads to faster and stable convergence and reduced oscillations.
+- Nesterov accelerated gradient: an improvement over Momentum GD: it would be great if the step size of the parameter update would somehow know that we start to approach the minimum and thus would start to decrease before reaching the minimum. The NAG algorithm looks ahead to the anticipated parameter pozition in the future, and it adds a correction to the parameter update step based on the derivative at the future position. 
+- Adagrad: Previously, all parameters used the same learning rate (which depended on the time step for Momentum GD and NAG). Adagrad uses a different learning rate for every parameter at every time step t.
+- AdaDelta: It is an extension of AdaGrad which tends to remove the decaying learning Rate problem of it. Instead of accumulating all previous squared gradients, Adadelta limits the window of accumulated past gradients to some fixed size w.
+- Adam = Adaptive Moment Estimation (https://arxiv.org/abs/1412.6980): In addition to storing an exponentially decaying average of past squared gradients like AdaDelta ,Adam also keeps an exponentially decaying average of past gradients M(t), similar to momentum. Modern algorithm (~2015), uses an adaptive-learning-rate strategy. Recommended by the above paper: "Insofar, Adam might be the best overall choice." (https://arxiv.org/abs/1609.04747)
+
+The above summary is mostly from a [towardsdatascience.com article](https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks-and-ways-to-optimize-gradient-95ae5d39529f)
 Available optimization algorithms in Keras: https://keras.io/optimizers/
+Computation of backpropagation formulae for common neural networks: https://www.ics.uci.edu/~pjsadows/notes.pdf
 
 ## Number of layers and nodes
 
