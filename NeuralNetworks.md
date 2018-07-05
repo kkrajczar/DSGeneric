@@ -1,5 +1,10 @@
 # Artifitial Neural Networks
 
+Michael Nielsen's free introductory book: http://neuralnetworksanddeeplearning.com
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville's
+- free book: http://www.deeplearningbook.org/
+- lectures: http://www.deeplearningbook.org/lecture_slides.html
+
 To be used both for regression and classification problems. Based on the connections between nodes, feedforward and recurrent networks as differentiated.
 
 ## Perceptron
@@ -41,11 +46,13 @@ Potential problem:
 
 ## Cost (or loss) function
 
-Differentiate binary and mulit-class cases for classification.
+There are some criteria to keep in mind when defining cost functions:
+- One of the most important ones is to make the C cost function differentiable with respect to all the outputs (the y’s). This is necessary for gradient descent to work.
+- Another good constraint is to make the cost of many inputs the average of the cost of individual inputs.
 
 - For classification: The logarithmic loss function is the cross entropy function (either binary_crossentropy, or categorical_crossentropy for two-class or multi-class classfication cases), which is tipically used for softmax layers.
 - For regression (linear layers): Tipical choice is mean squared error
-- Mean absolute error
+- Mean absolute error: however, it is not differentiable at 0.
 
 Available loss functions in Keras: https://keras.io/losses/
 
