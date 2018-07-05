@@ -9,7 +9,7 @@ To be used both for regression and classification problems. Based on the connect
 - David Kriesel's "[A Brief Introduction to Neural Networks](http://www.dkriesel.com/en/science/neural_networks)".<br>
 - Martin T. Hagan, Howard B. Demuth, Mark H. Beale and Orlando D. Jess on "[Neural Network Design](http://hagan.ecen.ceat.okstate.edu/nnd.html)".<br>
 - Simon Haykin on "[Neural Networks and Learning Machines](https://cours.etsmtl.ca/sys843/REFS/Books/ebook_Haykin09.pdf)".<br>
-- Li Deng and Dong Yu's "[Deep Learning Methods and Applications](ttps://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/DeepLearning-NowPublishing-Vol7-SIG-039.pdf)" on signal and information processing tasks.<br>
+- Li Deng and Dong Yu's "[Deep Learning Methods and Applications](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/DeepLearning-NowPublishing-Vol7-SIG-039.pdf)" on signal and information processing tasks.<br>
 - Python code recipes by LISA Lab, University of Montreal, "[Deep Learning Tutorial](http://deeplearning.net/tutorial/deeplearning.pdf)" using Theano.<br>
 
 ## Perceptron
