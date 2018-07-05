@@ -1,5 +1,3 @@
-# DSGeneric - Repository for generic data science know-hows
-
 ## Artifitial Neural Networks
 
 To be used both for regression and classification problems. Based on the connections between nodes, feedforward and recurrent networks as differentiated.
