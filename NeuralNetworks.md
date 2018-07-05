@@ -52,9 +52,16 @@ There are some criteria to keep in mind when defining cost functions:
 - One of the most important ones is to make the C cost function differentiable with respect to all the outputs (the y’s). This is necessary for gradient descent to work.
 - Another good constraint is to make the cost of many inputs the average of the cost of individual inputs.
 
-- For classification: The logarithmic loss function is the cross entropy function (either binary_crossentropy, or categorical_crossentropy for two-class or multi-class classfication cases), which is tipically used for softmax layers.
-- For regression (linear layers): Tipical choice is mean squared error
-- Mean absolute error: however, it is not differentiable at 0.
+- For classification:
+    - The logarithmic loss function is the cross entropy function (either binary_crossentropy, or categorical_crossentropy for two-class or multi-class classfication cases), which is tipically used for softmax layers. The cross entropy loss is ubiquitous in modern deep neural networks.
+    - Hinge loss
+    - Logistic loss
+    - Kullback–Leibler divergence
+    - Exponential loss
+- For regression (linear layers):
+    - Tipical choice is mean squared error: it has the disadvantage that it has the tendency to be dominated by outliers
+    - Mean absolute error or Laplace or l1 loss: better than MSE in case of outliers, however, it is not differentiable at 0.
+    - Huber loss
 
 Available loss functions in Keras: https://keras.io/losses/
 
@@ -96,6 +103,8 @@ Computation of backpropagation formulae for common neural networks: https://www.
 - Hidden layers: 
   - If data is linearly separable, no hidden layers at all are needed.
   - The situations in which performance improves with a second (or third, etc.) hidden layer are very few. One hidden layer is sufficient for the large majority of problems. Training multiple hidden layers is known to be 'hard'.
+  - Lots of noise, little structure -> not deep
+  - Little noise, complex structure -> deep (larger representational capacity)
   - How many neurons? There are some empirically-derived rules-of-thumb, of these, the most commonly relied on is 'the optimal size of the hidden layer is usually between the size of the input and size of the output layers'. In practice, chosing the mean of the neurons in the input and output layers as a standard approach.
 
 Pruning: techniques to reduce the number of 'excess' nodes (that have weights close to 0) during training to reduce computing complexity and timing.
