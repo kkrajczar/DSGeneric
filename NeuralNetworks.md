@@ -2,7 +2,7 @@
 
 To be used both for regression and classification problems. Based on the connections between nodes, feedforward and recurrent networks as differentiated.
 
-## Books
+## Free books
 
 - Michael Nielsen's free introductory book: http://neuralnetworksanddeeplearning.com<br>
 - Ian Goodfellow, Yoshua Bengio, and Aaron Courville's<br>
