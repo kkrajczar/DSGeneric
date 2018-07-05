@@ -1,4 +1,4 @@
-# Artifitial Neural Networks
+# Artificial Neural Networks
 
 To be used both for regression and classification problems. Based on the connections between nodes, feedforward and recurrent networks as differentiated.
 
