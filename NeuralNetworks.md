@@ -1,11 +1,13 @@
 # Artifitial Neural Networks
 
-Michael Nielsen's free introductory book: http://neuralnetworksanddeeplearning.com
-Ian Goodfellow, Yoshua Bengio, and Aaron Courville's
-- free book: http://www.deeplearningbook.org/
-- lectures: http://www.deeplearningbook.org/lecture_slides.html
-
 To be used both for regression and classification problems. Based on the connections between nodes, feedforward and recurrent networks as differentiated.
+
+## Books
+
+- Michael Nielsen's free introductory book: http://neuralnetworksanddeeplearning.com<br>
+- Ian Goodfellow, Yoshua Bengio, and Aaron Courville's<br>
+    - free book: http://www.deeplearningbook.org/
+    - lectures: http://www.deeplearningbook.org/lecture_slides.html
 
 ## Perceptron
 
