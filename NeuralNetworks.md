@@ -8,16 +8,6 @@ To be used both for regression and classification problems. Based on the connect
 - The most famous example of the perceptron's inability to solve problems with linearly nonseparable vectors is the Boolean exclusive-or problem.
 - In the context of neural networks, a perceptron is an artificial neuron using the Heaviside step function as the activation function. The perceptron algorithm is also termed the single-layer perceptron, to distinguish it from a multilayer perceptron, which is a misnomer for a more complicated neural network. As a linear classifier, the single-layer perceptron is the simplest feedforward neural network.
 
-## Cost (or loss) function
-
-Differentiate binary and mulit-class cases for classification.
-
-- The logarithmic loss function is the cross entropy function. Either binary_crossentropy, or categorical_crossentropy for two-class or multi-class classfication cases.
-- Mean squared error
-- Mean absolute error
-
-Available loss functions in Keras: https://keras.io/losses/
-
 ## Activation functions
 
 Differentiate binary and multi-class cases for classification. Differentiate hidden-layer and output-layer activation functions.
@@ -48,6 +38,16 @@ Potential problem:
 - Non-zero centered
 - Unbounded
 - Dying ReLU problem: ReLU neurons can sometimes be pushed into states in which they become inactive for essentially all inputs. In this state, no gradients flow backward through the neuron, and so the neuron becomes stuck in a perpetually inactive state and "dies." This is a form of the "vanishing gradient problem." In some cases, large numbers of neurons in a network can become stuck in dead states, effectively decreasing the model capacity. This problem typically arises when the learning rate is set too high. It may be mitigated by using Leaky ReLUs instead.
+
+## Cost (or loss) function
+
+Differentiate binary and mulit-class cases for classification.
+
+- For classification: The logarithmic loss function is the cross entropy function (either binary_crossentropy, or categorical_crossentropy for two-class or multi-class classfication cases), which is tipically used for softmax layers.
+- For regression (linear layers): Tipical choice is mean squared error
+- Mean absolute error
+
+Available loss functions in Keras: https://keras.io/losses/
 
 ## Weight optimization
 
