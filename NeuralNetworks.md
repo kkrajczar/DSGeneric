@@ -31,8 +31,9 @@ Hidden layer:
 - Best practice: rectifier activation function for the hidden layers
  
 Output layer:
-- Linear: for regression
+- Linear: for regression (using simoid, for instance, for regression would limit the predictions between the supplied minimum and maximum: sigmoid is between 0 and 1).
 - Logistic sigmoid / softmax: for classification; the softmax function is a generalization of the logistic fuction that "squashes" a K-dimensional vector z of arbitrary real values to a K-dimensional vector sigma(z) of real values in the range 0--1 that add up to 1.
+- (The output of convolutional networks could be ReLU.)
 
 Available activation functions in Keras: https://keras.io/activations/
 
