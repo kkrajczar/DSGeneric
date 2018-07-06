@@ -74,4 +74,50 @@ It is a discrete probability distribution that describes the probability of k su
 
 It describes probabilities for when sampling from a finite population without replacement in which each sample can be classified into two mutually exclusive categories like Pass/Fail, Male/Female or Employed/Unemployed. As random selections are made from the population, each subsequent draw decreases the population causing the probability of success to change with each draw. Unlike the standard hypergeometric distribution, which describes the number of successes in a fixed sample size, in the negative hypergeometric distribution, samples are drawn until r failures have been found, and the distribution describes the probability of finding k successes in such a sample. In other words, the negative hypergeometric distribution describes the likelihood of k successes in a sample with exactly r failures.
 
+# Definitions and Theorems
+
+- Independence of two random variables: P(A \bigcup B) = P(A)P(B) (joint probabilities equal to the product of the probabilities)
+  - joint probability distribution: given at least two random variables X, Y, ..., that are defined on a probability space, the joint probability distribution for X, Y, ... is a probability distribution that gives the probability that each of X, Y, ... falls in any particular range or discrete set of values specified for that variable. In the case of only two random variables, this is called a bivariate distribution, but the concept generalizes to any number of random variables, giving a multivariate distribution. Can be used to find two other types of distributions:
+    - the marginal distribution giving the probabilities for any one of the variables with no reference to any specific range of values for the other variables
+    - the conditional probability distribution giving the probabilities for any subset of the variables conditional on particular values of the remaining variables. In case of independence: P(A, B) = P(A)P(B). This is useful to show dependence of variables!
+  - The multivariate normal distribution, which is a continuous distribution, is the most commonly encountered distribution in statistics. When there are specifically two random variables, this is the bivariate normal distribution.
+  - In general, random variables may be uncorrelated but statistically dependent. But if a random vector has a multivariate normal distribution then any two or more of its components that are uncorrelated are independent.
+
+- Expected value: Sum_i=0^n p_i*x_i
+- Variance: Var(X) = E\[(X-mu)^2\] = Cov(X,X) = E\[X^2\] - E\[X\]^2
+  - Var(X) = Sum_i=0^n p_i*(x_i - mu)^2
+  - Var(X) = 1/n Sum_i=0^n (x_i - mu)^2 , if p_i is independent of i (equally likely outcomes)
+  - There are biased and unbiased sample variances (the 1/(n-1) factor instead of 1/n for normal distr.)
+- Covariance:
+  - cov(X,Y) = E\[(X-E\[X\])(Y-E\[Y\])\] = E\[XY\] - E\[X\]E\[Y\]
+  - cov(X,Y) = 1/n Summa_i=1^n (x_i- E\[X\])(y_i-E\[Y\]) = 1/n^2 Summa_i=1^n Summa_j=1^n 1/2 (x_i-x_j)(y_i-y_j)
+  - cov(X,Y) = Summa_(x,y)eS f(x,y)(x-mu_x)(y-mu_y), where f(x,y) is the joint probability mass function
+  - For independent variables, cov(X,Y) = 0 and thus corr(X,Y) = 0, but cov(X,Y) = 0 or corr(X,Y) does not mean independence!
+- Autocovariance: the autocovariance is a function that gives the covariance of the process with itself at pairs of time points:
+  - C_XX(t,s) = cov(X_t, X_s) = E\[(X_t - mu_t)(X_s - mu_s)\] = E\[X_tX_s\] - mu_tmu_s
+- Correlation:
+  - rho_X,Y = corr(X,Y)=cov(X,Y)/sigma_Xsigma_Y = E\[(X-mu_X)(Y-mu_Y)\]/sigma_Xsigma_Y
+  - correlation coefficient detects only linear dependencies between two variables
+  - if the variables are independent -> corr = 0; the converse is not true!
+  - in the special case when X and Y are jointly normal, uncorrelatedness is equivalent to independence
+- Autocorrelation: also known as serial correlation, is the correlation of a signal with a delayed copy of itselfas a function of delay. Informally, it is the similarity between observations as a function of the time lag between them.
+  - R(s, t) = E\[(X_t - mu_t)(X_s - mu_s)\] / sigma_tsigma_s
+- Confidence interval : a confidence interval (CI) is a type of interval estimate (of a population parameter) that is computed from the observed data. The confidence level is the frequency (i.e., the proportion) of possible confidence intervals that contain the true value of their corresponding parameter. In other words, if confidence intervals are constructed using a given confidence level in an infinite number of independent experiments, the proportion of those intervals that contain the true value of the parameter will match the confidence level. Confidence intervals consist of a range of values (interval) that act as good estimates of the unknown population parameter.
+
+### The Central Limit Theorem
+
+In most situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution even if the original variables themselves are not normally distributed. For example, suppose that a sample is obtained containing a large number of observations, each observation being randomly generated in a way that does not depend on the values of the other observations, and that the arithmetic average of the observed values is computed. If this procedure is performed many times, the central limit theorem says that the computed values of the average will be distributed according to a normal distribution. A simple example of this is that if one flips a coin many times the probability of getting a given number of heads in a series of flips will approach a normal curve, with mean equal to half the total number of flips in each series. The central limit theorem has a number of variants. In its common form, the random variables must be identically distributed. In variants, convergence of the mean to the normal distribution also occurs for non-identical distributions or for non-independent observations, given that they comply with certain conditions. In more general usage, a central limit theorem is any of a set of weak-convergence theorems in probability theory. They all express the fact that a sum of many independent and identically distributed (i.i.d.) random variables, or alternatively, random variables with specific types of dependence, will tend to be distributed according to one of a small set of attractor distributions. The central limit theorem also tells us how fast the convergence of the sample mean to the population mean is: the squared error will typically be about Var\[Y\]/n
+
+### Box-Cox transformation
+
+It transforms non-normal dependent variable into a normal shape using a lambda exponent, which is between -5 and 5:
+  - y(lambda) = (y^lambda - 1)/lambda, if lambda != 0
+  - y(lambda) = log(y), if lambda = 0
+
+
+# Trivia
+
+- Combination and permutation:
+  - When the order doesn't matter, it is a Combination.
+  - When the order does matter it is a Permutation.
 
