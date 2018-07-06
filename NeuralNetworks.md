@@ -21,12 +21,18 @@ To be used both for regression and classification problems. Based on the connect
 ## Activation functions
 
 Differentiate binary and multi-class cases for classification. Differentiate hidden-layer and output-layer activation functions.
+The activation function at the output layer often depends on the cost function.
 
+Hidden layer:
 - Heaviside step function
-- Logistic sigmoid / softmax:  the softmax function is a generalization of the logistic fuction that "squashes" a K-dimensional vector z of arbitrary real values to a K-dimensional vector sigma(z) of real values in the range 0--1 that add up to 1.
-- Hyperbolic tangent
 - Rectifier function = ramp function. It has been used in convolutional networks more effectively than the widely used logistic sigmoid and its more practical counterpart, the hyperbolic tangent. The rectifier is, as of 2015, the most popular activation function for deep neural networks. A unit employing the rectifier is also called a rectified linear unit (ReLU).
-- Best practice: rectifier activation function for the hidden layers (found best in practice), sigmoid for the output layer activation function. Sigmoid allows for probabilistic interpretations.
+- Hyperbolic tangent: suffers from the vanishing gradients problem
+- Sigmoid: suffers from the vanishing gradients problem
+- Best practice: rectifier activation function for the hidden layers
+ 
+Output layer:
+- Linear: for regression
+- Logistic sigmoid / softmax: for classification; the softmax function is a generalization of the logistic fuction that "squashes" a K-dimensional vector z of arbitrary real values to a K-dimensional vector sigma(z) of real values in the range 0--1 that add up to 1.
 
 Available activation functions in Keras: https://keras.io/activations/
 
