@@ -90,9 +90,10 @@ Broad categories:
     - Examples would include the gradient descent algoritmhs
 - Second order algoritmhs: they use the second order derivatives (the Hessian matrix). They provide us with a quadratic surface which touches the curvature of the Error Surface.
     - Such algirithms are costly to compute compared to the first order ones, however they will not get stuck around paths of slow convergence around saddle points whereas gradient descent sometimes gets stuck and does not converges.
-    - Examples would include the interior-point algorithms https://web.stanford.edu/class/msande311/lecture13.pdf
+    - Examples would include Newton's method (which is applied to f' instead of f, and so it gets the Hessian involved), and the interior-point algorithms https://web.stanford.edu/class/msande311/lecture13.pdf
 
 Selected algorithms:
+- Newton's method: second order algorithm, where Newton's root searching algorithm is applied to f' (and thus it involes the Hessian). Saddle points trap this kind of optimization, however linesearch with the Wolfe conditions or using or trust regions prevents convergence to saddle points.
 - Gradient descent: minimize or maximize a loss function E(x) using its gradient values with respect to the parameters. It is a first order optimization algorithm, that is to say that it only uses the first order derivatives (the Jacobian matrix).
 - Stochastic gradient descent: frequent updates to the weights (compared to GD), which results in higher variance in the loss function, which in turn helps to discover 'better' minima. The stochastic nature will result in more complex convergence to the exact minima. 
 - Mini batch gradient descent: updates are only performed after batches of inputs have been processed. In practice, SGD usually refers to this batch algorithm.
@@ -101,6 +102,8 @@ Selected algorithms:
 - Adagrad: Previously, all parameters used the same learning rate (which depended on the time step for Momentum GD and NAG). Adagrad uses a different learning rate for every parameter at every time step t.
 - AdaDelta: It is an extension of AdaGrad which tends to remove the decaying learning Rate problem of it. Instead of accumulating all previous squared gradients, Adadelta limits the window of accumulated past gradients to some fixed size w.
 - Adam = Adaptive Moment Estimation (https://arxiv.org/abs/1412.6980): In addition to storing an exponentially decaying average of past squared gradients like AdaDelta ,Adam also keeps an exponentially decaying average of past gradients M(t), similar to momentum. Modern algorithm (~2015), uses an adaptive-learning-rate strategy. Recommended by the above paper: "Insofar, Adam might be the best overall choice." (https://arxiv.org/abs/1609.04747)
+
+The standard Newton's method is trapped by saddle points. Being trapped at saddle points _might_ be possible in gradient descent as well (even though it is very unlikely with random initialization). In momentum-using methods, like AdaGrad or Adam, saddle points are surely escaped as the past gradients are also used.
 
 The above summary is mostly from a [towardsdatascience.com article](https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks-and-ways-to-optimize-gradient-95ae5d39529f)
 Available optimization algorithms in Keras: https://keras.io/optimizers/
@@ -133,5 +136,6 @@ Very brief summary by ['doug' at stackexchange](https://stats.stackexchange.com/
 
 - A single-layer (only output layer) neural network with the logistic activation function is identical to the logist regression model.
 - The "Delta rule" is a gradient descent learning rule for updating the weights of the inputs to artificial neurons in a single-layer neural network. It is a special case of the more general backpropagation algorithm.
+
 
 
