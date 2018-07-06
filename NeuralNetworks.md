@@ -126,6 +126,25 @@ Pruning: techniques to reduce the number of 'excess' nodes (that have weights cl
 
 Very brief summary by ['doug' at stackexchange](https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw)
 
+## Regularization (prevent overfitting)
+
+There are three broad ways of preventing overfitting: i) constraining the parameters, ii) ensmeble of many models, and iii) more training data.
+
+- Classical l1 and l2 parameter norm penalties (to the cost function)
+- Early stopping: Early stopping rules provide guidance as to how many iterations can be run before the learner begins to over-fit. 
+- Parameter tying and parameter sharing
+- Bagging and other ensemble methods
+- Droupout
+Dropout is a regularization technique for neural network models proposed by Srivastava, et al. in their 2014 [paper](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)
+It is a technique where randomly selected neurons are ignored during training. They are “dropped-out” randomly. This means that their contribution to the activation of downstream neurons is temporally removed on the forward pass and any weight updates are not applied to the neuron on the backward pass.
+As a neural network learns, neuron weights settle into their context within the network. Weights of neurons are tuned for specific features providing some specialization. Neighboring neurons become to rely on this specialization, which if taken too far can result in a fragile model too specialized to the training data. This reliance on context for a neuron during training is referred to as complex co-adaptation. Droupout does not modify the cost function. Drouput can be view as an ensemble method as it averages the weights computed across all the modified networks. See [Jason Brownlee's tips](https://machinelearningmastery.com/dropout-regularization-deep-learning-models-keras/) for using Dropout.
+- Data augumentation
+- Tangent propagation
+- Batch normalization also sometimes reduces generalization error and allows dropout to be omitted, because of the noise in the estimate of the statistics used to normalize each variable.
+
+Parameter norm regularizers in Keras: https://keras.io/regularizers/<br>
+Dropout in Keras: https://keras.io/layers/core/#dropout
+
 ## Code libraries
 
 - Tensorflow
