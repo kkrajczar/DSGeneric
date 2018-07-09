@@ -32,6 +32,19 @@ It is a discrete probability distribution of the number of successes in a sequen
   - pmf: (k+r-1 k) (1-p)^r p^k
   - mean: pr/(1-p)
   - variance: pr/(1-p)^2
+  - The geometric distribution (on { 0, 1, 2, 3, ... }) is a special case of the negative binomial distribution, with
+Geom(p) = NB(1, 1−p).
+        
+### Geometric distribution
+
+In probability theory and statistics, the geometric distribution is either of two discrete probability distributions:
+- The probability distribution of the number X of Bernoulli trials needed to get one success, supported on the set {1, 2, 3, ...}.
+- The probability distribution of the number Y = X − 1 of failures before the first success, supported on the set {0, 1, 2, 3, ...}. 
+Which of these one calls "the" geometric distribution is a matter of convention and convenience. These two different geometric distributions should not be confused with each other. Often, the name shifted geometric distribution is adopted for the former one (distribution of the number X); however, to avoid ambiguity, it is considered wise to indicate which is intended, by mentioning the support explicitly.  
+  - pmf: Pr(X=k) = (1-p)^(k-1) p  or  Pr(Y=k) = (1-p)^k p (for the two cases mentioned above)
+  - mean: 1/p  or  (1-p)/p
+  - variance: (1-p)/p^2 (for both cases)
+  - The geometric distribution Y is a special case of the negative binomial distribution, with r = 1.
 
 ### Multinomial distribution
 
