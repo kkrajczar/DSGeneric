@@ -76,7 +76,7 @@ It describes probabilities for when sampling from a finite population without re
 
 # Definitions and Theorems
 
-- Independence of two random variables: P(A \bigcup B) = P(A)P(B) (joint probabilities equal to the product of the probabilities)
+- Independence of two random variables: P(A \bigcap B) = P(A)P(B) (joint probabilities equal to the product of the probabilities)
   - joint probability distribution: given at least two random variables X, Y, ..., that are defined on a probability space, the joint probability distribution for X, Y, ... is a probability distribution that gives the probability that each of X, Y, ... falls in any particular range or discrete set of values specified for that variable. In the case of only two random variables, this is called a bivariate distribution, but the concept generalizes to any number of random variables, giving a multivariate distribution. Can be used to find two other types of distributions:
     - the marginal distribution giving the probabilities for any one of the variables with no reference to any specific range of values for the other variables
     - the conditional probability distribution giving the probabilities for any subset of the variables conditional on particular values of the remaining variables. In case of independence: P(A, B) = P(A)P(B). This is useful to show dependence of variables!
