@@ -10,6 +10,13 @@ A distribution that has constant probability.
   - maximum likelihood: m, where m is the sample maximum
   - minimum-variance unbiased estimator (UMVU): i) for continuous sample: ((k+1)/k)m = m + m/k, ii) for discrete distribution: m + (m-k)/k = m + m/k - 1, where k is the sample size
     
+### Rademacher distribution
+
+In probability theory and statistics, the Rademacher distribution (which is named after Hans Rademacher) is a discrete probability distribution where a random variate X has a 50% chance of being +1 and a 50% chance of being -1. A series of Rademacher distributed variables can be regarded as a simple symmetrical random walk where the step size is 1. 
+  - pmf: f(k) = 1/2 if k = 1, f(k) = 1/2 if k = -1, f(k) = 0 otherwise
+  - mean: 0
+  - variance: 1
+  
 ### Binomial distribution
 
 The discrete probability distribution of the number of successes in a sequence of n independent experiments, each asking a yes/no question, and each with its own boolean-valued outcome.
