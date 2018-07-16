@@ -9,8 +9,10 @@ RNNs come in many variants: Fully recurrent, Independently recurrent (IndRNN), R
 ## Literature
 
 - See the books listed on the [ANN page](NeuralNetworks.md)
+- [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) by Christopher Olah
 - [Time series predictions with LSTM](https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/) by Jason Brownlee
 - [Multivariate Time Series Forecasting with LSTMs](https://machinelearningmastery.com/multivariate-time-series-forecasting-lstms-keras/) by Jason Brownlee
+- [Understanding Keras LSTMs](https://stackoverflow.com/questions/38714959/understanding-keras-lstms) on Stackoverflow.
 
 ## LSTM - Long Short-term memory network
 
