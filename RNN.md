@@ -2,6 +2,10 @@
 
 Recurrent layers in Keras: https://keras.io/layers/recurrent/
 
+The term "recurrent neural network" is used indiscriminately to refer to two broad classes of networks with a similar general structure, where one is finite impulse and the other is infinite impulse. Both classes of networks exhibit temporal dynamic behavior. A finite impulse recurrent network is a directed acyclic graph that can be unrolled and replaced with a strictly feedforward neural network, while an infinite impulse recurrent network is a directed cyclic graph that can not be unrolled. 
+
+RNNs come in many variants: Fully recurrent, Independently recurrent (IndRNN), Recursive, Hopfield, Elman networks and Jordan networks, Echo state, Neural history compressor, Long short-term memory (LSTM), Gated recurrent unit, Bi-directional, Continuous-time, etc.
+
 ## Literature
 
 - See the books listed on the [ANN page](NeuralNetworks.md)
