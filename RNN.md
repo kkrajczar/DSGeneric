@@ -1,5 +1,7 @@
 # Recurrent Neural Networks
 
+Recurrent layers in Keras: https://keras.io/layers/recurrent/
+
 ## Literature
 
 - See the books listed on the [ANN page](NeuralNetworks.md)
