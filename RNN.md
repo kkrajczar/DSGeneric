@@ -29,6 +29,16 @@ Each unit is like a mini-state machine where the gates of the units have weights
 LSTM module illustration by [Christopher Olah](http://colah.github.io/posts/2015-08-Understanding-LSTMs/):
 ![alt text](Pictures/LSTM_1_byChristopherOlah.png "LSTM module by Christopher Olah")
 
+- The first step in our LSTM is to decide what information we’re going to throw away from the cell state. This decision is made by a sigmoid layer called the "forget gate layer."
+- The next step is to decide what new information we’re going to store in the cell state. This has two parts. First, a sigmoid layer called the “input gate layer” decides which values we’ll update. Next, a tanh layer creates a vector of new candidate values, C_t, that could be added to the state. Then, we’ll combine these two to create an update to the state.
+- Finally, we need to decide what we’re going to output. This output will be based on our cell state, but will be a filtered version. First, we run a sigmoid layer which decides what parts of the cell state we’re going to output. Then, we put the cell state through tanh (to push the values to be between -1 and 1) and multiply it by the output of the sigmoid gate, so that we only output the parts we decided to.
+
+### Variants
+
+- Peephole: we let the gate layers look at the cell state.
+- Coupled forget and input gates: instead of separately deciding what to forget and what we should add new information to, we make those decisions together. We only forget when we’re going to input something in its place.
+- Gated Recurrent Unit (GRU): it combines the forget and input gates into a single “update gate.” It also merges the cell state and hidden state, and makes some other changes. The resulting model is simpler than standard LSTM models
+
 ### Backpropagation through time
 
 ### Stacked LSTMs
