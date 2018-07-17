@@ -51,6 +51,7 @@ LSTM module illustration by [Christopher Olah](http://colah.github.io/posts/2015
     - Time Steps. One time step is one point of observation in the sample.
     - Features. One feature is one observation at a time step.
 This means that the input layer expects a 3D array of data when fitting the model and when making predictions, even if specific dimensions of the array contain a single value, e.g. one sample or one feature.
+Jason Brownlee's [tutorial](https://machinelearningmastery.com/reshape-input-data-long-short-term-memory-networks-keras/) expands on this.
 
 - Stacked LSTMs: LSTM networks can be stacked in Keras in the same way that other layer types can be stacked. One addition to the configuration that is required is that an LSTM layer prior to each subsequent LSTM layer must return the sequence. This can be done by setting the return_sequences parameter on the layer to True.
 
