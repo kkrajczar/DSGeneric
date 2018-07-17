@@ -46,5 +46,12 @@ LSTM module illustration by [Christopher Olah](http://colah.github.io/posts/2015
 
 ### Keras implementation
 
+- Input to LSTM: The input to every LSTM layer must be three-dimensional. The three dimensions of this input are:
+    - Samples. One sequence is one sample. A batch is comprised of one or more samples.
+    - Time Steps. One time step is one point of observation in the sample.
+    - Features. One feature is one observation at a time step.
+This means that the input layer expects a 3D array of data when fitting the model and when making predictions, even if specific dimensions of the array contain a single value, e.g. one sample or one feature.
+
 - Stacked LSTMs: LSTM networks can be stacked in Keras in the same way that other layer types can be stacked. One addition to the configuration that is required is that an LSTM layer prior to each subsequent LSTM layer must return the sequence. This can be done by setting the return_sequences parameter on the layer to True.
+
 - LSTM with Memory Between Batches: The LSTM network has memory, which is capable of remembering across long sequences. Normally, the state within the network is reset after each training batch when fitting the model, as well as each call to model.predict() or model.evaluate(). We can gain finer control over when the internal state of the LSTM network is cleared in Keras by making the LSTM layer “stateful”. This means that it can build state over the entire training sequence and even maintain that state if needed to make predictions. It requires that the training data not be shuffled when fitting the network. It also requires explicit resetting of the network state after each exposure to the training data (epoch) by calls to model.reset_states(). This means that we must create our own outer loop of epochs and within each epoch call model.fit() and model.reset_states(). Finally, when the LSTM layer is constructed, the stateful parameter must be set True and instead of specifying the input dimensions, we must hard code the number of samples in a batch, number of time steps in a sample and number of features in a time step by setting the batch_input_shape parameter.
