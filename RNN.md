@@ -15,6 +15,7 @@ RNNs come in many variants: Fully recurrent, Independently recurrent (IndRNN), R
 - [Time series predictions with LSTM](https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/) by Jason Brownlee
 - [Multivariate Time Series Forecasting with LSTMs](https://machinelearningmastery.com/multivariate-time-series-forecasting-lstms-keras/) by Jason Brownlee
 - [Multi-step time series forecasting with Long Short-term Memory Networks](https://machinelearningmastery.com/multi-step-time-series-forecasting-long-short-term-memory-networks-python/) by Jason Brownlee
+- [Tune LSTM hyperparameters in Keras time series forecasting](https://machinelearningmastery.com/tune-lstm-hyperparameters-keras-time-series-forecasting/) by Jason Brownlee
 - [Understanding Keras LSTMs](https://stackoverflow.com/questions/38714959/understanding-keras-lstms) on Stackoverflow.
 
 ## LSTM - Long Short-term memory network
