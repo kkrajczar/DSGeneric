@@ -178,7 +178,7 @@ For ANN, we can recognize that:
 - I_m: represents feature normalization, however the theorem holds with compact subsets of R^m too
 - Summation: output node activation after one hidden layer of N neurons with linear activation function
 
-[Kurt Hornik showed](https://doi.org/10.1016/0893-6080(91)90009-T) in 1991 that it is not the specific choice of the activation function, but rather the multilayer feedforward architecture itself which gives neural networks the potential of being universal approximators.
+[Kurt Hornik showed](https://doi.org/10.1016/0893-6080(91)90009-T) in 1991 that it is not the specific choice of the activation function, but rather the multilayer feedforward architecture itself which gives neural networks the potential of being universal approximators. [Sho Sonoda and Noboru Murata showed](https://doi.org/10.1016/j.acha.2015.12.005) in 2015 that ANNs with unbounded activation functions (like ReLU) still satisfy the universal approximation property.
 
 
 
