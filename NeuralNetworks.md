@@ -156,5 +156,30 @@ Dropout in Keras: https://keras.io/layers/core/#dropout
 - A single-layer (only output layer) neural network with the logistic activation function is identical to the logist regression model.
 - The "Delta rule" is a gradient descent learning rule for updating the weights of the inputs to artificial neurons in a single-layer neural network. It is a special case of the more general backpropagation algorithm.
 
+## Why do artificial neural networks 'work'?
+
+This question will be broken down into its implicit subquestions below.
+
+### What kind of functions can artifitial neural networks model?
+
+Ultimately, each network describes a rule for transforming input into output: each network is an 'embodiment' of a function. The nodes / blocks of the network are subfunctions. The structure of the network determines in which order the various subfunctions are evaluated. 
+
+What kind of functions can be represented by the network? This is a mathematical question with known answers under certain conditions. See the [Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem). The theorem states that a feed-forward network with a single hidden layer containing a finite number of neurons can approximate continuous functions on compact subsets of R^n, under mild assumptions on the activation function. 
+
+Formally, by [George Cybenko for the sigmoid activation function](https://doi.org/10.1007/BF02551274):
+Let phi be a nonconstant, bounded, and monotonically-increasing continuous function. Let I_m denote the m-dimensional unit hypercube \[0,1\]^m. The space of continuous functions on I_m is denoted by C(I_m). Then, given any epsilon > 0 and any function f in C(I_m), there exist an integer N, real constants v_i , b_i in R and real vectors w_i in R^m, where i = 1 , ..., N , such that we may define: 
+F(x) = Sum_{i = 1}^{N} v_i phi(w_i^T * x + b_i) and |F(x) - f(x)| < epsilon for all x in I_m.
+The statememt even holds if I_m is replaced by any compact subset of R^m.
+
+For ANN, we can recognize that:
+- phi: activation function (sigmoid is noncontant, bounded, monotonically-increasing, continuous)
+- w_i: weigths in the input vector for the i^th neuron
+- b_i: bias on the i^th neuron
+- I_m: represents feature normalization, however the theorem holds with compact subsets of R^m too
+- Summation: output node activation after one hidden layer of N neurons with linear activation function
+
+[Kurt Hornik showed](https://doi.org/10.1016/0893-6080(91)90009-T) in 1991 that it is not the specific choice of the activation function, but rather the multilayer feedforward architecture itself which gives neural networks the potential of being universal approximators.
+
+
 
 
