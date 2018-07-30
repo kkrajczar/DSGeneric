@@ -158,7 +158,7 @@ Dropout in Keras: https://keras.io/layers/core/#dropout
 
 ## Why do artificial neural networks 'work'?
 
-This question will be broken down into its implicit subquestions below.
+This question will be broken down into its implicit subquestions below, partially following [Andrea Klein on Quora](https://www.quora.com/Why-do-artificial-neural-networks-work-the-way-they-do-Some-might-have-multiple-layers-Why-does-an-artificial-neural-network-learn-to-recognize-patterns-the-way-it-does).
 
 ### What kind of functions can artifitial neural networks model?
 
@@ -180,6 +180,12 @@ For ANN, we can recognize that:
 
 [Kurt Hornik showed](https://doi.org/10.1016/0893-6080(91)90009-T) in 1991 that it is not the specific choice of the activation function, but rather the multilayer feedforward architecture itself which gives neural networks the potential of being universal approximators. [Sho Sonoda and Noboru Murata showed](https://doi.org/10.1016/j.acha.2015.12.005) in 2015 that ANNs with unbounded activation functions (like ReLU) still satisfy the universal approximation property.
 
+It seems also true that the universal approximator property is fairly robust relative to the exact choice of network: one does not have to have the choice of network exactly right in order to approximate a particular function - there may be a network which is ideal for that function, but you can still do quite well with a similar network (of sufficient complexity); by [Andrea Klein on Quora](https://www.quora.com/Why-do-artificial-neural-networks-work-the-way-they-do-Some-might-have-multiple-layers-Why-does-an-artificial-neural-network-learn-to-recognize-patterns-the-way-it-does).
 
+### How do these functions correspond to what we think of as "patterns" in the real world?
 
+As long as one suspects that in a real world problem there is a governing rule between 'some' input variables and output variables, and the underlying rule falls under the class of functions modeled by universal approximators (as defined in the proof of the universal approximation theorem), then there exist neural networks which can approximate that rule. 'Patterns' are simply connections / associations in the input data that --with the help of the output-- the network learns to identify (= approximate the 'correct' underlying function connecting the input to the output).
 
+### How does the function represented by a given ANN converge to the underlying 'real' function that connects the input and output?
+
+The function that is represented by the ANN is defined by the architecture of the network (number of inmput features, layers, nodes, etc) and by the corresponding values of the weights and biases (see the notation above in the Universal Approximator discussion). For a given network, the weights are usually initialized randomly, then optimized via backpropagation (like Adam) to minimize a loss function (like MSE). The minimization happens on an error surface defined by the exact loss function chosen. The mothods used assure convergence to a local minimum on the error surface.
