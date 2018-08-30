@@ -13,16 +13,32 @@ The AR part of ARIMA indicates that the evolving variable of interest is regress
 - Wikipedia [article](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average)
 - Robert Nau on [ARIMA](https://people.duke.edu/~rnau/411arim.htm)
 
-## Time series
+## Definitions: ARMA and ARIMA
 
-## Box–Jenkins approach 
+The **ARMA(p,q)** model in general combines the dependence of X_t on its earlier values (X_{t-1}, X_{t-2}, etc.) --AT model-- and on the earlier error values (epsilon_{t-1}, epsilon_{t-2}, etc.) --MA model--. This can be expressed in the following form:<br>
+![alt text](Pictures/ARMA.png "ARMA model for X_t")<br>
 
-## ARMA
+If we assume that C=0 and replace symbols with others, an alternative formula is the following:<br>
+![alt text](Pictures/ARMA_pslashq.png "ARMA model for X_t")<br>
+We will use proceed using this form.
+Let's introduce the L time shift (or lag) operator: L(X_t) = L(X_{t-1}). With L, we can re-write the ARMA model for X_t in the following form:<br>
+![alt text](Pictures/ARMA_pslashq_alternative.png "ARMA model for X_t")<br>
+
+Enter the concept of integrated time series. Let's take the left side of the above equation and assume that the polynomial on the left side (polynomial of L) has d number of unit roots. In this case, the left side can be re-written as<br>
+![alt text](Pictures/ARMA_ifdunitroots.png "ARMA model for X_t")<br>
+
+Now, we are ready to define the **ARIMA(p,d,q)** model as follows:<br>
+![alt text](Pictures/ARIMA.png "ARIMA model for X_t")<br>
+
+It is worth to draw attention to a few special cases:
+- ARIMA(0,0,0): X_t = epsilon_t, which describes white noise
+- ARIMA(0,1,0): X_t = X_{t-1} + epsilon_t, which describes a random walk
 
 ## Stationarity
 
-## Auto-regression
+## Software
+- Python: statsmodels.tsa.arima_model
+- Scala: https://github.com/sryza/spark-timeseries ([ARIMA](https://github.com/sryza/spark-timeseries/blob/master/src/main/scala/com/cloudera/sparkts/models/ARIMA.scala))
 
-## Moving average
 
 
