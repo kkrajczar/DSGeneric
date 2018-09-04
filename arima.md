@@ -6,6 +6,7 @@ The AR part of ARIMA indicates that the evolving variable of interest is regress
 
 ## Examples, references
 
+- PennState [lecture](https://onlinecourses.science.psu.edu/stat510/node/49/)
 - Jason Brownlee's ARIMA [post 1](https://machinelearningmastery.com/arima-for-time-series-forecasting-with-python/)
 - Jason Brownless's ARIMA [post 2](https://machinelearningmastery.com/make-sample-forecasts-arima-python/)
 - Arindam Chatterjee on Kaggle about "[Time series for beginners with ARIMA](https://www.kaggle.com/freespirit08/time-series-for-beginners-with-arima/notebook?utm_medium=email&utm_source=mailchimp&utm_campaign=datanotes-20180823)"
