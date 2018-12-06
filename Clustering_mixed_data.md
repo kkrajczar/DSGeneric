@@ -10,6 +10,10 @@
 - Cao et al.'s [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.474.8181&rep=rep1&type=pdf) on initialization for categorical data clustering  
 - Thomas Filaire using [PAM in R](https://towardsdatascience.com/clustering-on-mixed-type-data-8bbd0a2569c3)
 
+### Introduction
+
+The sample space for categorical data is discrete, and doesn't have a natural origin. A Euclidean distance function on such a space isn't really meaningful.
+
 ### Genetic approaches
 
 - Apply a algorithm specific for mixed cases: k-prototyping, partitioning around medoids (PAM).
@@ -23,10 +27,5 @@ OR u could use the R package called FactorMineR or PCAmix to carry Factor analys
 
 - Converting categorical attributes to binary values, and then doing k-means as if these were numeric values. Earlier method, see [Ralambondrainy](https://www.sciencedirect.com/science/article/abs/pii/016786559500075R).
 
-
-
-### Introduction
-
-The sample space for categorical data is discrete, and doesn't have a natural origin. A Euclidean distance function on such a space isn't really meaningful.
 
 ### k-means vs k-medians vs k-modes vs k-prototyping
