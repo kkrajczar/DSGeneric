@@ -14,7 +14,7 @@
 
 The sample space for categorical data is discrete, and doesn't have a natural origin. A Euclidean distance function on such a space isn't really meaningful.
 
-### Genetic approaches
+### General approaches
 
 - Apply a algorithm specific for mixed cases: k-prototyping, partitioning around medoids (PAM).
 For categorical data, typically Hamming dissimilarity or Gower distance measure is used. With Hamming dissimilarity, the distance is 1 for each feature that differs (rather than the difference between the numeric values assigned to the categories). Is label encoding or onehotencoding needed for Hamming distance, or can we keep the variables as whatever categories?
