@@ -3,7 +3,7 @@
 ### References
 
 - [Kaggle discussion](https://www.kaggle.com/general/19741)
-- [stackoverflow](https://datascience.stackexchange.com/questions/22/k-means-clustering-for-mixed-numeric-and-categorical-data)
+- [stackoverflow discussion](https://datascience.stackexchange.com/questions/22/k-means-clustering-for-mixed-numeric-and-categorical-data)
 - k-modes and k-prototype [paper](https://pdfs.semanticscholar.org/d42b/b5ad2d03be6d8fefa63d25d02c0711d19728.pdf) by Zhexue Huang
 - Zenghiou He's [paper](https://arxiv.org/ftp/cs/papers/0603/0603120.pdf) on approximation algorithms for k-modes and sensitivity to initial conditions.
 - Nico de Vos' [github](https://github.com/nicodv/kmodes) with a python implementation of k-modes and k-prototyping 
