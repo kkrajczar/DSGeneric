@@ -27,5 +27,8 @@ OR u could use the R package called FactorMineR or PCAmix to carry Factor analys
 
 - Converting categorical attributes to binary values, and then doing k-means as if these were numeric values. Earlier method, see [Ralambondrainy](https://www.sciencedirect.com/science/article/abs/pii/016786559500075R).
 
+- Gower distance apparently [can be used](https://stats.stackexchange.com/questions/15287/hierarchical-clustering-with-mixed-type-data-what-distance-similarity-to-use) for clustering nominal, quantitative, etc, variables. Not sure if it is good for mixed data, too.
 
-### k-means vs k-medians vs k-modes vs k-prototyping
+### k-means vs k-medians vs k-modes vs k-prototyping vs hierarchical clustering
+
+
