@@ -16,7 +16,7 @@ The sample space for categorical data is discrete, and doesn't have a natural or
 
 ### General approaches
 
-- Apply a algorithm specific for mixed cases: k-prototyping. For categorical data, typically Hamming dissimilarity or Gower distance measure is used. With Hamming dissimilarity, the distance is 1 for each feature that differs (rather than the difference between the numeric values assigned to the categories). Is label encoding or onehotencoding needed for Hamming distance, or can we keep the variables as whatever categories?
+- Apply an algorithm specific for mixed cases: k-prototyping. In general, for categorical data, typically Hamming dissimilarity or Gower distance measure is used. With Hamming dissimilarity, the distance is 1 for each feature that differs (rather than the difference between the numeric values assigned to the categories).
 
 - "If your scale your numeric features to the same range as the binarized categorical features then cosine similarity tends to yield very similar results to the Hamming approach above. I don't have a robust way to validate that this works in all cases so when I have mixed cat and num data I always check the clustering on a sample with the simple cosine method I mentioned and the more complicated mix with Hamming. If the difference is insignificant I prefer the simpler method." cwharland, in the linked stackoverflow discussion.
 
