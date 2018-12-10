@@ -16,8 +16,7 @@ The sample space for categorical data is discrete, and doesn't have a natural or
 
 ### General approaches
 
-- Apply a algorithm specific for mixed cases: k-prototyping, partitioning around medoids (PAM).
-For categorical data, typically Hamming dissimilarity or Gower distance measure is used. With Hamming dissimilarity, the distance is 1 for each feature that differs (rather than the difference between the numeric values assigned to the categories). Is label encoding or onehotencoding needed for Hamming distance, or can we keep the variables as whatever categories?
+- Apply a algorithm specific for mixed cases: k-prototyping. For categorical data, typically Hamming dissimilarity or Gower distance measure is used. With Hamming dissimilarity, the distance is 1 for each feature that differs (rather than the difference between the numeric values assigned to the categories). Is label encoding or onehotencoding needed for Hamming distance, or can we keep the variables as whatever categories?
 
 - "If your scale your numeric features to the same range as the binarized categorical features then cosine similarity tends to yield very similar results to the Hamming approach above. I don't have a robust way to validate that this works in all cases so when I have mixed cat and num data I always check the clustering on a sample with the simple cosine method I mentioned and the more complicated mix with Hamming. If the difference is insignificant I prefer the simpler method." cwharland, in the linked stackoverflow discussion.
 
@@ -27,7 +26,7 @@ OR u could use the R package called FactorMineR or PCAmix to carry Factor analys
 
 - Converting categorical attributes to binary values, and then doing k-means as if these were numeric values. Earlier method, see [Ralambondrainy](https://www.sciencedirect.com/science/article/abs/pii/016786559500075R).
 
-- Gower distance apparently [can be used](https://stats.stackexchange.com/questions/15287/hierarchical-clustering-with-mixed-type-data-what-distance-similarity-to-use) for clustering nominal, quantitative, etc, variables. Not sure if it is good for mixed data, too. For python, [see this discussion](https://stackoverflow.com/questions/26387662/python-equivalent-of-daisy-in-the-cluster-package-of-r) and also [this one](https://github.com/scikit-learn/scikit-learn/issues/5884). In R, there is already an "official" [implementation](https://stats.stackexchange.com/questions/15287/hierarchical-clustering-with-mixed-type-data-what-distance-similarity-to-use). In case of python, read also [this](https://stackoverflow.com/questions/18952587/use-distance-matrix-in-scipy-cluster-hierarchy-linkage).
+- Gower distance apparently [can be used](https://stats.stackexchange.com/questions/15287/hierarchical-clustering-with-mixed-type-data-what-distance-similarity-to-use) for clustering nominal, quantitative, etc, variables. Not sure if it is good for mixed data, too. For python, [see this discussion](https://stackoverflow.com/questions/26387662/python-equivalent-of-daisy-in-the-cluster-package-of-r) and also [this one](https://github.com/scikit-learn/scikit-learn/issues/5884). In R, there is already an "official" [implementation](https://stats.stackexchange.com/questions/15287/hierarchical-clustering-with-mixed-type-data-what-distance-similarity-to-use). In case of python, read also [this](https://stackoverflow.com/questions/18952587/use-distance-matrix-in-scipy-cluster-hierarchy-linkage). Gower distance ["fits well"](https://towardsdatascience.com/clustering-on-mixed-type-data-8bbd0a2569c3) with partitioning around medoids (PAM).
 
 ### k-means vs k-medians vs k-modes vs k-prototyping vs hierarchical clustering
 
