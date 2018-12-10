@@ -9,6 +9,7 @@
 - Nico de Vos' [github](https://github.com/nicodv/kmodes) with a python implementation of k-modes and k-prototyping 
 - Cao et al.'s [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.474.8181&rep=rep1&type=pdf) on initialization for categorical data clustering  
 - Thomas Filaire using [PAM in R](https://towardsdatascience.com/clustering-on-mixed-type-data-8bbd0a2569c3)
+- Gower's [paper](http://members.cbio.mines-paristech.fr/~jvert/svn/bibli/local/Gower1971general.pdf)
 
 ### Introduction
 
